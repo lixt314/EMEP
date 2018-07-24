@@ -37,17 +37,17 @@ for i=1:size(CR,2)
  % C = unique(truelabels); %all clusters
  %   nClusters = length(C); %number of clusters
 
-   dtype=1;
+  % dtype=1;
 %[DB,CH,Dunn,KL,Han,~] = valid_internal_deviation(X,CR(:,i),dtype);
 %[ Gs ] = global_silhouette(CR(:,i) , X , nClusters);
 
 %        [AR,RI]=valid_RandIndex(CR(:,i),truelabels); % compute Rand index and its variations
    %     ca = valid_CA(CR(:,i), truelabels); %compute Classification Accuracy
-        NMI = Cal_NMI(CR(:,i),truelabels);
+        %NMI = Cal_NMI(CR(:,i),truelabels);
        % [~, ~, Rn, ~, ~, ~, ~] = exMeasure(CR(:,i),truelabels);
 
-        [AR,RI,MI,HI]=RandIndex(CR(:,i),truelabels);
-        V = [V [Value cp NMI AR]];
+        %[AR,RI,MI,HI]=RandIndex(CR(:,i),truelabels);
+        V = [V [Value cp]];
 end
 
 

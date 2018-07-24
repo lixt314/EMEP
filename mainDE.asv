@@ -5,8 +5,8 @@ clc
 % identify all input arguments
 rand('state', 0);   
 %%%% for Four-Gaussian dataset %%%%%
-for F=0.4:0.1:0.4
-    for CR=0.1:0.1:0.1
+for F=0.4:0.1:1
+    for CR=0.1:0.1:1
 RRR=[];
 
 problemSet = [1 : 6];
@@ -89,6 +89,7 @@ vPredictClass=[];
     Coding='Binary';
     Boundary=[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1; 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0];
     Generations=10;
+     nr = 2;
     for Gene = 1 : Generations
             %Fmax = max(FunctionValue);
             %Fmin = Z;

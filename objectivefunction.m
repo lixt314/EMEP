@@ -1,4 +1,4 @@
-function [fitness,fitness1,fitness2]=objectivefunction(PredictClass,para,K,truelabels,X1)
+function [fitness,label]=objectivefunction(PredictClass,para,K,truelabels,X1)
 dcASRS = 0.8;
 R = 5;
 dcSRS = 0.8;
@@ -38,5 +38,4 @@ V = cleval(X1, label, truelabels);
 fitness=V(1:2);
 %fitness(1)= V(2);
 %fitness(2)= V(3);
-fitness1= V(end-1);
-fitness2= V(end);
+
