@@ -2,9 +2,9 @@ clear all
 clc
 
 %addpath('C:\Users\WYF\Desktop\SIMLR-SIMLR\MATLAB\src')
-% identify all input arguments
+
 rand('state', 0);   
-%%%% for Four-Gaussian dataset %%%%%
+
 for F=0.4:0.1:0.4
     for CR=0.1:0.1:0.1
 RRR=[];
