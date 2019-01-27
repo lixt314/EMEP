@@ -15,30 +15,30 @@ for problemIndex = 1:6
     problem = problemSet(problemIndex)
    switch problem
         case 1
-            Data= importdata('Data_Buettner.mat') %import Four-Gaussian data  
+            Data= importdata('Data_Buettner.mat') 
             X=Data.in_X;         
         case 2
-           Data= importdata('Data_Deng.mat') %import Four-Gaussian data
+           Data= importdata('Data_Deng.mat') 
            X=Data.in_X;    
        case 3
-           Data= importdata('Data_Ginhoux.mat') %import Four-Gaussian data
+           Data= importdata('Data_Ginhoux.mat') 
            X=Data.in_X;    
        case 4
-            Data= importdata('Data_Pollen.mat') %import Four-Gaussian data
+            Data= importdata('Data_Pollen.mat')
             X=Data.in_X;          
        case 5
-           Data= importdata('Data_Ting.mat') %import Four-Gaussian data
+           Data= importdata('Data_Ting.mat') 
            X=Data.in_X;
 
        case 6
-           Data= importdata('Data_Treutlin.mat') %import Four-Gaussian data
+           Data= importdata('Data_Treutlin.mat') 
            X=Data.in_X;
    
    end
 X1=normalizeData(X);
 K = length(unique(Data.true_labs)) % the number of clusters in the final clustering (using in consensus functions)
-truelabels = Data.true_labs; %import Four-Gaussian truelabels
-%%%%%%%%%%%%%%%%%%%%%%%%%%%dimensional reduction+kmeans
+truelabels = Data.true_labs; 
+
 vPredictClass=[];
      for i = 2: 20
         option.algorithm='nmfrule';
@@ -112,7 +112,7 @@ vPredictClass=[];
                     g_old = max(abs(FunctionValue(B(i,j),:)-Z).*W(B(i,j),:));
                     g_new = max(abs(OffFunValue-Z).*W(B(i,j),:));
                 if g_new < g_old
-                    %¸üÐÂµ±Ç°ÏòÁ¿µÄ¸öÌå
+                    %æ›´æ–°å½“å‰å‘é‡çš„ä¸ªä½“
                     Population(B(i,j),:) = Offspring;
                     FunctionValue(B(i,j),:) = OffFunValue;
                     POP_label(B(i,j),:)=Off_label;
@@ -121,7 +121,7 @@ vPredictClass=[];
                 end
             end
 
-            %·´¹éÒ»»¯
+            %åå½’ä¸€åŒ–
             %FunctionValue = FunctionValue.*repmat(Fmax-Fmin,N,1)+repmat(Fmin,N,1);
 
         end
@@ -133,10 +133,8 @@ vPredictClass=[];
         [ARAR(i,:),RI,MI,HI]=RandIndex(POP_label(i,:),truelabels);
     end
     Results(problemIndex,:)=max(NNMI)
-    Results1(problemIndex,:)=max(ARAR)
 end
-RRR=[Results' Results1'];
-    end
+
+end
     
 end
-Results
