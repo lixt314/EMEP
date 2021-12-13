@@ -5,8 +5,7 @@ clc
 
 rand('state', 0);   
 
-for F=0.4:0.1:0.4
-    for CR=0.1:0.1:0.1
+
 RRR=[];
 
 problemSet = [1 : 6];
@@ -135,6 +134,4 @@ vPredictClass=[];
     Results(problemIndex,:)=max(NNMI)
 end
 
-end
-    
-end
+
